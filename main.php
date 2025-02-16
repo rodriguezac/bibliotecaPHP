@@ -1,6 +1,7 @@
 <?php
-require_once "Biblioteca.php";
-require_once "Usuario.php";
+
+require_once 'Biblioteca.php';
+require_once 'Usuario.php';
 
 $biblioteca = new Biblioteca();
 
@@ -10,35 +11,48 @@ while (true) {
 
     if ($rol == '1') {
         while (true) {
-            echo "\nMenú Administrador:\n1. Mostrar libros\n2. Mostrar solo disponibles\n3. Volver\n";
+            echo "\nMenú Administrador:\n1. Agregar libro\n2. Editar libro\n3. Eliminar libro\n4. Buscar libro\n5. Mostrar libros\n6. Volver\n";
             $opcion = readline("Seleccione una opción: ");
             switch ($opcion) {
                 case '1':
-                    $biblioteca->mostrarLibros();
+                    $titulo = readline("Título: ");
+                    $autor = readline("Autor: ");
+                    $categoria = readline("Categoría: ");
+                    echo "\n";
+                    $biblioteca->agregarLibro(new Libro($titulo, $autor, $categoria));
                     break;
                 case '2':
-                    $biblioteca->mostrarLibros(true);
+                    $titulo = readline("Ingrese el título del libro a editar: ");
+                    $biblioteca->editarLibro($titulo);
                     break;
                 case '3':
+                    $titulo = readline("Ingrese el título del libro a eliminar: ");
+                    $biblioteca->eliminarLibro($titulo);
+                    break;
+                case '4':
+                    $busqueda = readline("Ingrese el título, autor o categoría del libro: ");
+                    $biblioteca->buscarLibro($busqueda);
+                    break;
+                case '5':
+                    $biblioteca->mostrarLibros();
+                    break;
+                case '6':
                     break 2;
                 default:
                     echo "Opción no válida.\n";
             }
         }
     } elseif ($rol == '2') {
-        echo "\nIngrese su nombre: ";
-        $nombre = readline();
-        $usuario = new Usuario($nombre);
-
         while (true) {
-            echo "\nMenú Cliente:\n1. Mostrar libros\n2. Mostrar solo disponibles\n3. Solicitar préstamo\n4. Devolver libro\n5. Volver\n";
+            echo "\nMenú Cliente:\n1. Buscar libro\n2. Mostrar libros\n3. Solicitar préstamo\n4. Devolver libro\n5. Volver\n";
             $opcion = readline("Seleccione una opción: ");
             switch ($opcion) {
                 case '1':
-                    $biblioteca->mostrarLibros();
+                    $busqueda = readline("Ingrese el título, autor o categoría del libro: ");
+                    $biblioteca->buscarLibro($busqueda);
                     break;
                 case '2':
-                    $biblioteca->mostrarLibros(true);
+                    $biblioteca->mostrarLibros();
                     break;
                 case '3':
                     $titulo = readline("Ingrese el título del libro a solicitar: ");
@@ -58,3 +72,5 @@ while (true) {
         exit("Saliendo del sistema...\n");
     }
 }
+
+?>
