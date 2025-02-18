@@ -14,7 +14,7 @@ class Biblioteca {
 
     public function mostrarLibros(): void {
         if (empty($this->libros)) {
-            echo "No hay libros en la biblioteca.\n";
+            echo "No hay libros disponibles en la biblioteca.\n";
             return;
         }
         foreach ($this->libros as $libro) {
