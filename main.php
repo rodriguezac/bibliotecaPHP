@@ -6,7 +6,7 @@ require_once 'Usuario.php';
 $biblioteca = new Biblioteca();
 
 while (true) {
-    echo "\nSeleccione su rol:\n1. Administrador\n2. Cliente\n3. Salir\n";
+    echo "\nBienvenido a la Biblioteca. Seleccione su rol:\n1. Administrador\n2. Cliente\n3. Salir\n";
     $rol = readline("Ingrese el número de su rol: ");
 
     if ($rol == '1') {
@@ -69,7 +69,7 @@ while (true) {
             }
         }
     } elseif ($rol == '3') {
-        exit("Saliendo del sistema...\n");
+        exit("Saliendo del sistema. Gracias por la visita...\n");
     }
 }
 
