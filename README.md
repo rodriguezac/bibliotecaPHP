@@ -1,8 +1,8 @@
-# 📚 Sistema de Biblioteca en PHP (POO)
+# Sistema de Biblioteca en PHP (POO)
 
 Bienvenido a **Sistema de Biblioteca en PHP**, un proyecto diseñado para gestionar préstamos de libros desde la terminal, utilizando **Programación Orientada a Objetos (POO)** en PHP.
 
-## 🚀 Características Principales
+## Características Principales
 - 📖 **Gestión de libros físicos**
 - 🔑 **Separación de roles**: Administrador y Cliente
 - 📦 **Préstamo y devolución de libros**
@@ -13,7 +13,7 @@ Bienvenido a **Sistema de Biblioteca en PHP**, un proyecto diseñado para gestio
 - **PHP 8+** 🐘
 - **CLI (Interfaz de Línea de Comandos)**
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 ```
 bibliotecaPHP/
 │── main.php          # Archivo principal (punto de entrada)
@@ -22,24 +22,24 @@ bibliotecaPHP/
 │── Usuario.php       # Clase que representa a un usuario
 ```
 
-## 🏛️ Modo de Uso
+## Modo de Uso
 Al ejecutar el script, puedes elegir entre **Modo Administrador** o **Modo Cliente**.
 
-### 🔹 Modo Administrador
+### Modo Administrador
 📌 Opciones disponibles:
-1️⃣ Mostrar todos los libros
-2️⃣ Mostrar solo los libros disponibles
-3️⃣ Volver al menú principal
+1. Mostrar todos los libros
+2. Mostrar solo los libros disponibles
+3. Volver al menú principal
 
-### 🔹 Modo Cliente
+### Modo Cliente
 📌 Opciones disponibles:
-1️⃣ Ver todos los libros
-2️⃣ Ver solo los disponibles
-3️⃣ Solicitar un préstamo
-4️⃣ Devolver un libro
-5️⃣ Volver al menú principal
+1. Ver todos los libros
+2. Ver solo los disponibles
+3. Solicitar un préstamo
+4. Devolver un libro
+5. Volver al menú principal
 
-## 🎯 Ejemplo de Interacción
+## Ejemplo de Interacción
 ```
 Seleccione su rol:
 1. Administrador
